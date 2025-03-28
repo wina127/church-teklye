@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Website</title>
+</head>
+<body>
+    <h1>Welcome to Our Church Book Library</h1>
+    <a href="{{ url_for('upload_book') }}">Upload New Book</a>
+    <h2>Books:</h2>
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{ url_for('book_page', book_id=book.id) }}">{{ book.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
